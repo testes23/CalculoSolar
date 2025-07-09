@@ -1,0 +1,81 @@
+{% extends 'solar/base.html' %}
+{% load static %}
+{% block solar %}
+
+
+<div class="container bg-light">
+    <form action="{% url 'cadastro_cliente' %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="row mb-3">
+            <div class="col" style="margin-bottom: 10px;">
+                <label style="margin-bottom: 5px;">{{ clienteform.name.label }}</label>
+                {{ clienteform.name }}
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col" style="margin-bottom: 10px;">
+                <label style="margin-bottom: 5px;">{{ clienteform.type_pf_pj.label }}</label>
+                {{ clienteform.type_pf_pj }}
+            </div>
+            <div class="col" style="margin-bottom: 10px;">
+                <label style="margin-bottom: 5px;">{{ clienteform.doc.label }}</label>
+                {{ clienteform.doc }}
+            </div>
+            <div class="col" style="margin-bottom: 10px;">
+                <label style="margin-bottom: 5px;">{{ clienteform.phone1.label }}</label>
+                {{ clienteform.phone1 }}
+            </div>
+            <div class="col" style="margin-bottom: 10px;">
+                <label style="margin-bottom: 5px;">{{ clienteform.phone2.label }}</label>
+                {{ clienteform.phone2 }}
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col" style="margin-bottom: 10px;">
+                <label style="margin-bottom: 5px;">{{ clienteform.email.label }}</label>
+                {{ clienteform.email }}
+            </div>
+            <div class="col" style="margin-bottom: 10px;">
+                <label style="margin-bottom: 5px;">{{ clienteform.coord_s.label }}</label>
+                {{ clienteform.coord_s }}
+            </div>
+            <div class="col" style="margin-bottom: 10px;">
+                <label style="margin-bottom: 5px;">{{ clienteform.coord_w.label }}</label>
+                {{ clienteform.coord_w }}
+            </div>
+        </div>
+        <div>
+            <div class="col" style="margin-bottom: 10px;">
+                <label style="margin-bottom: 5px;">{{ clienteform.street.label }}</label>
+                {{ clienteform.street }}
+            </div>
+            <div class="col" style="margin-bottom: 10px;">
+                <label style="margin-bottom: 5px;">{{ clienteform.street_number.label }}</label>
+                {{ clienteform.street_number }}
+            </div>
+            <div class="col" style="margin-bottom: 10px;">
+                <label style="margin-bottom: 5px;">{{ clienteform.postal_code.label }}</label>
+                {{ clienteform.postal_code }}
+            </div>
+        </div>
+        <div>
+            <div class="col" style="margin-bottom: 10px;">
+                <label style="margin-bottom: 5px;">{{ clienteform.bairro.label }}</label>
+                {{ clienteform.bairro }}
+            </div>
+            <div class="col" style="margin-bottom: 10px;">
+                <label style="margin-bottom: 5px;">{{ clienteform.city.label }}</label>
+                {{ clienteform.city }}
+            </div>
+            <div class="col" style="margin-bottom: 10px;">
+                <label style="margin-bottom: 5px;">{{ clienteform.state.label }}</label>
+                {{ clienteform.state }}
+            </div>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-primary">Cadastrar Cliente</button>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

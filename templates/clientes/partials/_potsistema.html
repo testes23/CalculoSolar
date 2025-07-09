@@ -1,0 +1,17 @@
+{% load static %}
+
+
+<h5>Potência do Sistema</h5>
+<div class="container">
+    <div class="shadow-sm row justify-content-md-center">
+        {% if irrad %}
+        <div class="col">{{pger}}</div>
+        <div class="col">Potencia do Painel: {{paineis.potpainel}} W</div>
+        <div class="col">Qtd mínima de Painéis: {{paineis}}</div>
+        {%else%}
+        <strong>
+            <div class="shadow-sm row justify-content-md-center">Não há Irradiação cadastrada</div>
+        </strong>
+        {% endif %}
+    </div>
+</div>

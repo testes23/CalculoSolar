@@ -1,0 +1,139 @@
+{% extends "solar/base.html" %}
+
+{% block content %}
+<div class="container py-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white">
+                    <h4 class="mb-0">
+                        <i class="fas fa-sun me-2"></i>
+                        Cadastro de Irradiação Solar
+                    </h4>
+                </div>
+                <div class="card-body">
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label">
+                                    {{ formirrad.irradi_jan.label }}
+                                </label>
+                                <div class="input-group">
+                                    {{ formirrad.irradi_jan }}
+                                    <span class="input-group-text">kWh/m².dia</span>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label">
+                                    {{ formirrad.irradi_fev.label }}
+                                </label>
+                                <div class="input-group">
+                                    {{ formirrad.irradi_fev }}
+                                    <span class="input-group-text">kWh/m².dia</span>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label">
+                                    {{ formirrad.irradi_mar.label }}
+                                </label>
+                                <div class="input-group">
+                                    {{ formirrad.irradi_mar }}
+                                    <span class="input-group-text">kWh/m².dia</span>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label">
+                                    {{ formirrad.irradi_abr.label }}
+                                </label>
+                                <div class="input-group">
+                                    {{ formirrad.irradi_abr }}
+                                    <span class="input-group-text">kWh/m².dia</span>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label">
+                                    {{ formirrad.irradi_mai.label }}
+                                </label>
+                                <div class="input-group">
+                                    {{ formirrad.irradi_mai }}
+                                    <span class="input-group-text">kWh/m².dia</span>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label">
+                                    {{ formirrad.irradi_jun.label }}
+                                </label>
+                                <div class="input-group">
+                                    {{ formirrad.irradi_jun }}
+                                    <span class="input-group-text">kWh/m².dia</span>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label">
+                                    {{ formirrad.irradi_jul.label }}
+                                </label>
+                                <div class="input-group">
+                                    {{ formirrad.irradi_jul }}
+                                    <span class="input-group-text">kWh/m².dia</span>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label">
+                                    {{ formirrad.irradi_ago.label }}
+                                </label>
+                                <div class="input-group">
+                                    {{ formirrad.irradi_ago }}
+                                    <span class="input-group-text">kWh/m².dia</span>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label">
+                                    {{ formirrad.irradi_set.label }}
+                                </label>
+                                <div class="input-group">
+                                    {{ formirrad.irradi_set }}
+                                    <span class="input-group-text">kWh/m².dia</span>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label">
+                                    {{ formirrad.irradi_out.label }}
+                                </label>
+                                <div class="input-group">
+                                    {{ formirrad.irradi_out }}
+                                    <span class="input-group-text">kWh/m².dia</span>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label">
+                                    {{ formirrad.irradi_nov.label }}
+                                </label>
+                                <div class="input-group">
+                                    {{ formirrad.irradi_nov }}
+                                    <span class="input-group-text">kWh/m².dia</span>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label">
+                                    {{ formirrad.irradi_dez.label }}
+                                </label>
+                                <div class="input-group">
+                                    {{ formirrad.irradi_dez }}
+                                    <span class="input-group-text">kWh/m².dia</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-save me-2"></i>
+                                Salvar Irradiação
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

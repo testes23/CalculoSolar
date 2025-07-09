@@ -1,0 +1,351 @@
+{% extends 'solar/base.html' %}
+{% load static %}
+
+{% block title %}Cadastro de Consumo - {{ block.super }}{% endblock %}
+
+{% block solar %}
+<div class="row">
+    <!-- Formulário de Consumo Mensal -->
+    <div class="col-12 mb-4">
+        <div class="card shadow-sm">
+            <div class="card-header bg-primary text-white">
+                <h5 class="card-title mb-0">
+                    <i class="fas fa-chart-line me-2"></i>Consumo Mensal
+                </h5>
+            </div>
+            <div class="card-body">
+                <form action="{% url 'cadastro_consumo' %}" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="row mb-4">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="{{ form.cliente.id_for_label }}" class="form-label">
+                                    {{ form.cliente.label }}
+                                </label>
+                                {{ form.cliente }}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <div class="form-group">
+                                <label for="{{ form.cons_jan.id_for_label }}" class="form-label">
+                                    {{ form.cons_jan.label }}
+                                </label>
+                                <div class="input-group">
+                                    {{ form.cons_jan }}
+                                    <span class="input-group-text">kWh</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="form-group">
+                                <label for="{{ form.cons_fev.id_for_label }}" class="form-label">
+                                    {{ form.cons_fev.label }}
+                                </label>
+                                <div class="input-group">
+                                    {{ form.cons_fev }}
+                                    <span class="input-group-text">kWh</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="form-group">
+                                <label for="{{ form.cons_mar.id_for_label }}" class="form-label">
+                                    {{ form.cons_mar.label }}
+                                </label>
+                                <div class="input-group">
+                                    {{ form.cons_mar }}
+                                    <span class="input-group-text">kWh</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <div class="form-group">
+                                <label for="{{ form.cons_abr.id_for_label }}" class="form-label">
+                                    {{ form.cons_abr.label }}
+                                </label>
+                                <div class="input-group">
+                                    {{ form.cons_abr }}
+                                    <span class="input-group-text">kWh</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="form-group">
+                                <label for="{{ form.cons_mai.id_for_label }}" class="form-label">
+                                    {{ form.cons_mai.label }}
+                                </label>
+                                <div class="input-group">
+                                    {{ form.cons_mai }}
+                                    <span class="input-group-text">kWh</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="form-group">
+                                <label for="{{ form.cons_jun.id_for_label }}" class="form-label">
+                                    {{ form.cons_jun.label }}
+                                </label>
+                                <div class="input-group">
+                                    {{ form.cons_jun }}
+                                    <span class="input-group-text">kWh</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <div class="form-group">
+                                <label for="{{ form.cons_jul.id_for_label }}" class="form-label">
+                                    {{ form.cons_jul.label }}
+                                </label>
+                                <div class="input-group">
+                                    {{ form.cons_jul }}
+                                    <span class="input-group-text">kWh</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="form-group">
+                                <label for="{{ form.cons_ago.id_for_label }}" class="form-label">
+                                    {{ form.cons_ago.label }}
+                                </label>
+                                <div class="input-group">
+                                    {{ form.cons_ago }}
+                                    <span class="input-group-text">kWh</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="form-group">
+                                <label for="{{ form.cons_set.id_for_label }}" class="form-label">
+                                    {{ form.cons_set.label }}
+                                </label>
+                                <div class="input-group">
+                                    {{ form.cons_set }}
+                                    <span class="input-group-text">kWh</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <div class="form-group">
+                                <label for="{{ form.cons_out.id_for_label }}" class="form-label">
+                                    {{ form.cons_out.label }}
+                                </label>
+                                <div class="input-group">
+                                    {{ form.cons_out }}
+                                    <span class="input-group-text">kWh</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="form-group">
+                                <label for="{{ form.cons_nov.id_for_label }}" class="form-label">
+                                    {{ form.cons_nov.label }}
+                                </label>
+                                <div class="input-group">
+                                    {{ form.cons_nov }}
+                                    <span class="input-group-text">kWh</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="form-group">
+                                <label for="{{ form.cons_dez.id_for_label }}" class="form-label">
+                                    {{ form.cons_dez.label }}
+                                </label>
+                                <div class="input-group">
+                                    {{ form.cons_dez }}
+                                    <span class="input-group-text">kWh</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mt-4">
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-save me-2"></i>Salvar Consumo
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Formulário de Consumo Adicional -->
+    <div class="col-12">
+        <div class="card shadow-sm">
+            <div class="card-header bg-success text-white">
+                <h5 class="card-title mb-0">
+                    <i class="fas fa-plus-circle me-2"></i>Consumo Adicional
+                </h5>
+            </div>
+            <div class="card-body">
+                <ul class="nav nav-tabs" id="consumoTabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="potencia-tab" data-bs-toggle="tab" data-bs-target="#potencia" type="button" role="tab">
+                            <i class="fas fa-bolt me-2"></i>Por Potência (W)
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="consumo-tab" data-bs-toggle="tab" data-bs-target="#consumo" type="button" role="tab">
+                            <i class="fas fa-chart-bar me-2"></i>Por Consumo (kWh/mês)
+                        </button>
+                    </li>
+                </ul>
+
+                <div class="tab-content mt-4" id="consumoTabsContent">
+                    <!-- Formulário por Potência -->
+                    <div class="tab-pane fade show active" id="potencia" role="tabpanel">
+                        <form action="{% url 'cadastro_consumo' %}" method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="{{ formadc.cliente.id_for_label }}" class="form-label">
+                                            {{ formadc.cliente.label }}
+                                        </label>
+                                        {{ formadc.cliente }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4 mb-3">
+                                    <div class="form-group">
+                                        <label for="{{ formadc.equipamento.id_for_label }}" class="form-label">
+                                            {{ formadc.equipamento.label }}
+                                        </label>
+                                        {{ formadc.equipamento }}
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <div class="form-group">
+                                        <label for="{{ formadc.pot.id_for_label }}" class="form-label">
+                                            {{ formadc.pot.label }}
+                                        </label>
+                                        <div class="input-group">
+                                            {{ formadc.pot }}
+                                            <span class="input-group-text">W</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <div class="form-group">
+                                        <label for="{{ formadc.horas.id_for_label }}" class="form-label">
+                                            {{ formadc.horas.label }}
+                                        </label>
+                                        {{ formadc.horas }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4 mb-3">
+                                    <div class="form-group">
+                                        <label for="{{ formadc.minutos.id_for_label }}" class="form-label">
+                                            {{ formadc.minutos.label }}
+                                        </label>
+                                        {{ formadc.minutos }}
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <div class="form-group">
+                                        <label for="{{ formadc.dias.id_for_label }}" class="form-label">
+                                            {{ formadc.dias.label }}
+                                        </label>
+                                        {{ formadc.dias }}
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3 d-flex align-items-end">
+                                    <button type="submit" class="btn btn-success w-100">
+                                        <i class="fas fa-save me-2"></i>Salvar
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Formulário por Consumo -->
+                    <div class="tab-pane fade" id="consumo" role="tabpanel">
+                        <form action="{% url 'cadastro_consumo' %}" method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="{{ formpot.cliente.id_for_label }}" class="form-label">
+                                            {{ formpot.cliente.label }}
+                                        </label>
+                                        {{ formpot.cliente }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4 mb-3">
+                                    <div class="form-group">
+                                        <label for="{{ formpot.equipamento.id_for_label }}" class="form-label">
+                                            {{ formpot.equipamento.label }}
+                                        </label>
+                                        {{ formpot.equipamento }}
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <div class="form-group">
+                                        <label for="{{ formpot.consumo.id_for_label }}" class="form-label">
+                                            {{ formpot.consumo.label }}
+                                        </label>
+                                        <div class="input-group">
+                                            {{ formpot.consumo }}
+                                            <span class="input-group-text">kWh/mês</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <div class="form-group">
+                                        <label for="{{ formpot.horas.id_for_label }}" class="form-label">
+                                            {{ formpot.horas.label }}
+                                        </label>
+                                        {{ formpot.horas }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4 mb-3">
+                                    <div class="form-group">
+                                        <label for="{{ formpot.minutos.id_for_label }}" class="form-label">
+                                            {{ formpot.minutos.label }}
+                                        </label>
+                                        {{ formpot.minutos }}
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <div class="form-group">
+                                        <label for="{{ formpot.dias.id_for_label }}" class="form-label">
+                                            {{ formpot.dias.label }}
+                                        </label>
+                                        {{ formpot.dias }}
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3 d-flex align-items-end">
+                                    <button type="submit" class="btn btn-success w-100">
+                                        <i class="fas fa-save me-2"></i>Salvar
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

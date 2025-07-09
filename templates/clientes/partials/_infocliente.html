@@ -1,0 +1,34 @@
+{% load static %}
+{% load phone_format %}
+
+<div class="container">
+    <div class="shadow-sm p-3 mb-5  rounded">
+        <h1 class="col">Cliente</h1>
+        <p class="col">Tipo do Cliente: {{nome.type_pf_pj|format_type}}</p>
+        <div class="row justify-content-md-left">
+            <div class="col">Nome: {{nome.name}}</div>
+            <div class="col-md-auto">CPF/CNPJ: {{nome.doc|format_doc}}</div>
+        </div>
+        <div class="row justify-content-md-left">
+            <div class="col">Email do Cliente: {{nome.email}}</div>
+            <div class="col-md-auto">Contato: {{nome.phone1|format_phone }}</div>
+            {% if nome.phone2 %}
+            <div class="col">Contato: {{nome.phone2|format_phone}}</div>
+            {% endif %}
+        </div>
+        <div class="row justify-content-md-left">
+            <div class="col">Endereço do Cliente: {{nome.format_endereco}}</div>
+            <div class="col-md-auto">Coodenadas: {{nome.format_coord}}</div>
+        </div>
+        <div class="row justify-content-md-left">
+            <div class="col">Data de Cadastro: {{nome.register_date}}</div>
+            <div class="col-md-auto">
+                <a href="{% url 'edit_cliente' nome.id %}">
+                    <button class="btn btn-primary">Editar</button>
+                </a>
+            </div>
+        </div>
+    </div>
+    {% block conta %}
+    {%endblock%}
+</div>

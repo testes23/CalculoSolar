@@ -1,0 +1,32 @@
+{% load static %}
+
+<div class="shadow-none p-3 mb-5 bg-light rounded">
+    <div class="row justify-content-md-center">
+        <h5>Geração Esperada</h5>
+        {% if irrad %}
+        {% if gerprev.paineisdesejados %}
+        <p class="shadow-sm row justify-content-md-center">Qnt de Painéis definido:
+            {{gerprev.paineisdesejados}}
+        </p>
+        {% else %}
+        <p class="shadow-sm row justify-content-md-center">Qnt definida de Painéis: {{paineis}}</p>
+        {% endif %}
+    </div>
+    <div class="container">
+        {% for i in gerprev.gercaoesperada %}
+        {% if forloop.counter0|divisibleby:3 %}
+        <div class="shadow-sm row justify-content-md-center">
+            {% endif %}
+            <div class="col">{{ i.0 }}: {{ i.1|floatformat:2 }} kWh</div>
+
+            {% if forloop.counter|divisibleby:3 or forloop.last %}
+        </div>
+        {% endif %}
+        {% endfor %}
+        {%else%}
+        <strong>
+            <div class="row justify-content-md-center">Não há Irradiação cadastrada</div>
+        </strong>
+        {% endif %}
+    </div>
+</div>

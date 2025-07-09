@@ -1,0 +1,48 @@
+{% load static %}
+
+<h5>Consumo Adicional</h5>
+<div class="container">
+    <div class="shadow-sm p-3 mb-5 bg-light rounded">
+        {% if potadic %}
+        {% for i in potadic %}
+        {% if forloop.counter0|divisibleby:2 %}
+        <div class="shadow-sm justify-content-md-center">
+            {% endif %}
+            <div class="col">
+                Equipamento: {{i.equipamento}} | Consumo: {{i.calculokwh|floatformat:2}}
+                kWh/mês
+            </div>
+            {% if forloop.counter|divisibleby:2 or forloop.last %}
+        </div>
+        {% endif %}
+        {% endfor %}
+        {%else%}
+
+        {% endif %}
+        {% if consadic %}
+        {% for i in consadic %}
+        {% if forloop.counter0|divisibleby:2 %}
+        <div class="shadow-sm row justify-content-md-center">
+            {% endif %}
+            <div class="col">Equipamento: {{i.equipamento}} | Consumo:
+                {{i.calculopotadicional|floatformat:2}}
+                kWh/mês</div>
+            {% if forloop.counter|divisibleby:2 or forloop.last %}
+        </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+    {%else%}
+    {% endif %}
+    <strong>
+        <div class="shadow-sm row justify-content-md-center "style="margin-bottom: 50px;"> Consumo Adicional:
+            {{consumo.consumo_adicional_total|floatformat:2 }}
+            kWh/mês</div>
+    </strong>
+    
+        <strong>
+            <div class="shadow-none row justify-content-md-center">
+                Consumo médio Total: {{consumo.cons_total|floatformat:2 }} kWh/mês
+            </div>
+        </strong>
+</div>

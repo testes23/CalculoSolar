@@ -1,0 +1,188 @@
+{% extends 'solar/base.html' %}
+{% load static %}
+
+{% block title %}Editar Irradiação Solar - {{ block.super }}{% endblock %}
+
+{% block solar %}
+<div class="row">
+    <div class="col-12">
+        <div class="card shadow-sm">
+            <div class="card-header bg-primary text-white">
+                <h5 class="card-title mb-0">
+                    <i class="fas fa-sun me-2"></i>Editar Irradiação Solar
+                </h5>
+            </div>
+            <div class="card-body">
+                <form action="{% url 'edit_irradi' irradi.id %}" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="row mb-4">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="{{ form.cliente.id_for_label }}" class="form-label">
+                                    {{ form.cliente.label }}
+                                </label>
+                                {{ form.cliente }}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <div class="form-group">
+                                <label for="{{ form.irr_jan.id_for_label }}" class="form-label">
+                                    {{ form.irr_jan.label }}
+                                </label>
+                                <div class="input-group">
+                                    {{ form.irr_jan }}
+                                    <span class="input-group-text">kWh/m²/dia</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="form-group">
+                                <label for="{{ form.irr_fev.id_for_label }}" class="form-label">
+                                    {{ form.irr_fev.label }}
+                                </label>
+                                <div class="input-group">
+                                    {{ form.irr_fev }}
+                                    <span class="input-group-text">kWh/m²/dia</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="form-group">
+                                <label for="{{ form.irr_mar.id_for_label }}" class="form-label">
+                                    {{ form.irr_mar.label }}
+                                </label>
+                                <div class="input-group">
+                                    {{ form.irr_mar }}
+                                    <span class="input-group-text">kWh/m²/dia</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <div class="form-group">
+                                <label for="{{ form.irr_abr.id_for_label }}" class="form-label">
+                                    {{ form.irr_abr.label }}
+                                </label>
+                                <div class="input-group">
+                                    {{ form.irr_abr }}
+                                    <span class="input-group-text">kWh/m²/dia</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="form-group">
+                                <label for="{{ form.irr_mai.id_for_label }}" class="form-label">
+                                    {{ form.irr_mai.label }}
+                                </label>
+                                <div class="input-group">
+                                    {{ form.irr_mai }}
+                                    <span class="input-group-text">kWh/m²/dia</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="form-group">
+                                <label for="{{ form.irr_jun.id_for_label }}" class="form-label">
+                                    {{ form.irr_jun.label }}
+                                </label>
+                                <div class="input-group">
+                                    {{ form.irr_jun }}
+                                    <span class="input-group-text">kWh/m²/dia</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <div class="form-group">
+                                <label for="{{ form.irr_jul.id_for_label }}" class="form-label">
+                                    {{ form.irr_jul.label }}
+                                </label>
+                                <div class="input-group">
+                                    {{ form.irr_jul }}
+                                    <span class="input-group-text">kWh/m²/dia</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="form-group">
+                                <label for="{{ form.irr_ago.id_for_label }}" class="form-label">
+                                    {{ form.irr_ago.label }}
+                                </label>
+                                <div class="input-group">
+                                    {{ form.irr_ago }}
+                                    <span class="input-group-text">kWh/m²/dia</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="form-group">
+                                <label for="{{ form.irr_set.id_for_label }}" class="form-label">
+                                    {{ form.irr_set.label }}
+                                </label>
+                                <div class="input-group">
+                                    {{ form.irr_set }}
+                                    <span class="input-group-text">kWh/m²/dia</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <div class="form-group">
+                                <label for="{{ form.irr_out.id_for_label }}" class="form-label">
+                                    {{ form.irr_out.label }}
+                                </label>
+                                <div class="input-group">
+                                    {{ form.irr_out }}
+                                    <span class="input-group-text">kWh/m²/dia</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="form-group">
+                                <label for="{{ form.irr_nov.id_for_label }}" class="form-label">
+                                    {{ form.irr_nov.label }}
+                                </label>
+                                <div class="input-group">
+                                    {{ form.irr_nov }}
+                                    <span class="input-group-text">kWh/m²/dia</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="form-group">
+                                <label for="{{ form.irr_dez.id_for_label }}" class="form-label">
+                                    {{ form.irr_dez.label }}
+                                </label>
+                                <div class="input-group">
+                                    {{ form.irr_dez }}
+                                    <span class="input-group-text">kWh/m²/dia</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mt-4">
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-save me-2"></i>Salvar Alterações
+                            </button>
+                            <a href="{% url 'cadastro_irradiacao' %}" class="btn btn-secondary">
+                                <i class="fas fa-times me-2"></i>Cancelar
+                            </a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,54 @@
+<div class="container">
+    <strong>
+            <div class="shadow-none p-3  bg-light rounded">
+                {% if consumo %}
+                Consumo Médio: {{consumo.media_consumo|floatformat:2}} kWh/mês
+                {% else %}
+                Consumo Médio: 0 kWh/mês
+                {% endif %}
+            </div>
+    </strong>
+        <div class="shadow-sm p-4 bg-light rounded">
+            {% if consumo %}
+            Consumo Adicional: {{consumo.consumo_adicional_total|floatformat:2 }} kWh/mês
+            {% else %}
+                Consumo Total: 0 kWh/mês
+            {% endif %}
+        </div>
+    <strong>
+            <div class="shadow-sm p-3 mb-5 bg-light rounded">
+                {% if consumo %}
+                Consumo Médio: {{consumo.media_consumo|floatformat:2}} kWh/mês
+                {% else %}
+                Consumo Total: 0 kWh/mês
+                {% endif %}
+            </div>
+    </strong>
+    <strong>
+        <div class="shadow-sm p-3 mb-5 bg-light rounded">
+            {% if irrad %}
+            Irradiação Média: {{irrad.media_irradiancia|floatformat:2 }} kWh/m².dia
+            {% else %}
+                Irradiação Média: 0 kWh/m².dia
+            {% endif %}
+        </div>
+    </strong>
+    <strong>
+        <div class="shadow-sm p-3 mb-5 bg-light rounded">
+            {% if pger %}
+            Potência do Sistema: {{pger}}
+            {% else %}
+            Potência do Sistema: 0 kWp
+            {% endif %}
+        </div>
+    </strong>
+    <strong>
+        <div class="shadow-sm p-3 mb-5 bg-light rounded">
+            {% if paineis %}
+            Qntd. Painéis: {{paineis}}  |  Potência dos Painéis: {{paineis.potpainel}} W
+            {% else %}
+            Qntd. Painéis: -  |  Potência dos Painéis: -
+            {% endif %}
+        </div>
+    </strong>
+</div>

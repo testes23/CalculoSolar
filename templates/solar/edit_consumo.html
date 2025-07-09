@@ -1,0 +1,188 @@
+{% extends 'solar/base.html' %}
+{% load static %}
+
+{% block title %}Editar Consumo - {{ block.super }}{% endblock %}
+
+{% block solar %}
+<div class="row">
+    <div class="col-12">
+        <div class="card shadow-sm">
+            <div class="card-header bg-primary text-white">
+                <h5 class="card-title mb-0">
+                    <i class="fas fa-bolt me-2"></i>Editar Consumo
+                </h5>
+            </div>
+            <div class="card-body">
+                <form action="{% url 'edit_consumo' consumo.id %}" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="row mb-4">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="{{ form.cliente.id_for_label }}" class="form-label">
+                                    {{ form.cliente.label }}
+                                </label>
+                                {{ form.cliente }}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <div class="form-group">
+                                <label for="{{ form.cons_jan.id_for_label }}" class="form-label">
+                                    {{ form.cons_jan.label }}
+                                </label>
+                                <div class="input-group">
+                                    {{ form.cons_jan }}
+                                    <span class="input-group-text">kWh</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="form-group">
+                                <label for="{{ form.cons_fev.id_for_label }}" class="form-label">
+                                    {{ form.cons_fev.label }}
+                                </label>
+                                <div class="input-group">
+                                    {{ form.cons_fev }}
+                                    <span class="input-group-text">kWh</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="form-group">
+                                <label for="{{ form.cons_mar.id_for_label }}" class="form-label">
+                                    {{ form.cons_mar.label }}
+                                </label>
+                                <div class="input-group">
+                                    {{ form.cons_mar }}
+                                    <span class="input-group-text">kWh</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <div class="form-group">
+                                <label for="{{ form.cons_abr.id_for_label }}" class="form-label">
+                                    {{ form.cons_abr.label }}
+                                </label>
+                                <div class="input-group">
+                                    {{ form.cons_abr }}
+                                    <span class="input-group-text">kWh</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="form-group">
+                                <label for="{{ form.cons_mai.id_for_label }}" class="form-label">
+                                    {{ form.cons_mai.label }}
+                                </label>
+                                <div class="input-group">
+                                    {{ form.cons_mai }}
+                                    <span class="input-group-text">kWh</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="form-group">
+                                <label for="{{ form.cons_jun.id_for_label }}" class="form-label">
+                                    {{ form.cons_jun.label }}
+                                </label>
+                                <div class="input-group">
+                                    {{ form.cons_jun }}
+                                    <span class="input-group-text">kWh</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <div class="form-group">
+                                <label for="{{ form.cons_jul.id_for_label }}" class="form-label">
+                                    {{ form.cons_jul.label }}
+                                </label>
+                                <div class="input-group">
+                                    {{ form.cons_jul }}
+                                    <span class="input-group-text">kWh</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="form-group">
+                                <label for="{{ form.cons_ago.id_for_label }}" class="form-label">
+                                    {{ form.cons_ago.label }}
+                                </label>
+                                <div class="input-group">
+                                    {{ form.cons_ago }}
+                                    <span class="input-group-text">kWh</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="form-group">
+                                <label for="{{ form.cons_set.id_for_label }}" class="form-label">
+                                    {{ form.cons_set.label }}
+                                </label>
+                                <div class="input-group">
+                                    {{ form.cons_set }}
+                                    <span class="input-group-text">kWh</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <div class="form-group">
+                                <label for="{{ form.cons_out.id_for_label }}" class="form-label">
+                                    {{ form.cons_out.label }}
+                                </label>
+                                <div class="input-group">
+                                    {{ form.cons_out }}
+                                    <span class="input-group-text">kWh</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="form-group">
+                                <label for="{{ form.cons_nov.id_for_label }}" class="form-label">
+                                    {{ form.cons_nov.label }}
+                                </label>
+                                <div class="input-group">
+                                    {{ form.cons_nov }}
+                                    <span class="input-group-text">kWh</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="form-group">
+                                <label for="{{ form.cons_dez.id_for_label }}" class="form-label">
+                                    {{ form.cons_dez.label }}
+                                </label>
+                                <div class="input-group">
+                                    {{ form.cons_dez }}
+                                    <span class="input-group-text">kWh</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mt-4">
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-save me-2"></i>Salvar Alterações
+                            </button>
+                            <a href="{% url 'cadastro_consumo' %}" class="btn btn-secondary">
+                                <i class="fas fa-times me-2"></i>Cancelar
+                            </a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

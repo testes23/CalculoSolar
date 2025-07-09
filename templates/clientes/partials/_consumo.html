@@ -1,0 +1,37 @@
+{% load static %}
+
+
+<h5>Consumo</h5>
+{% if consumo %}
+<div class="shadow-none p-3 mb-5 bg-light rounded">
+    <div class="shadow-sm row justify-content-md-center">
+        <div class="col">Janeiro: {{consumo.cons_jan}} kWh</div>
+        <div class="col">Fevereiro: {{consumo.cons_fev}} kWh</div>
+        <div class="col">Março: {{consumo.cons_mar}} kWh</div>
+    </div>
+    <div class="shadow-sm row justify-content-md-center">
+        <div class="col">Abril: {{consumo.cons_abr}} kWh</div>
+        <div class="col">Maio: {{consumo.cons_mai}} kWh</div>
+        <div class="col">Junho: {{consumo.cons_jun}} kWh</div>
+    </div>
+    <div class="shadow-sm row justify-content-md-center">
+        <div class="col">Julho: {{consumo.cons_jul}} kWh</div>
+        <div class="col">Agosto: {{consumo.cons_ago}} kWh</div>
+        <div class="col">Setembro: {{consumo.cons_set}} kWh</div>
+    </div>
+    <div class="shadow-sm row justify-content-md-center">
+        <div class="col">Outubro: {{consumo.cons_out}} kWh</div>
+        <div class="col">Novembro: {{consumo.cons_nov}} kWh</div>
+        <div class="col">Dezembro: {{consumo.cons_dez}} kWh</div>
+    </div>
+</div>
+<strong>
+    <div class="shadow-sm row justify-content-md-center"> Média de Consumo:
+        {{consumo.media_consumo|floatformat:2}} kWh</div>
+</strong>
+{%else%}
+<strong>
+    <div class="shadow-sm row justify-content-md-center">Não há Consumo cadastrado</div>
+    
+</strong>
+{% endif %}

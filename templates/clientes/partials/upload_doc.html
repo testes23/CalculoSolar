@@ -1,0 +1,30 @@
+{% load static %}
+
+
+<div class="container">
+    <div class="modal fade" id="uploadDocModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <!-- Cabeçalho do Modal -->
+            <div class="modal-header">
+              <h5 class="modal-title">Upload de Conta</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            
+            <!-- Corpo do Modal (Formulário) -->
+            <div class="modal-body">
+              <form method="post" enctype="multipart/form-data" action="{% url 'cliente' cliente_id %}">
+                {% csrf_token %}
+                
+                <!-- Exemplo de campos (personalize conforme seu form) -->
+                <div class="mb-3">
+                  <label for="arquivo" class="form-label">Nome do Cliente: {{cliente.name}}</label>{{form_up.archives}}
+                </div>          
+                <button type="submit" class="btn btn-success">Enviar</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+

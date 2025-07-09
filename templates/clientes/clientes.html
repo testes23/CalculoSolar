@@ -1,0 +1,60 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+{% load phone_format %}
+{% block content %}
+
+<head>
+</head>
+<div class="card mb-4">
+    <div class="card-header">
+        <i class="fas fa-table me-1"></i>
+        Clientes
+    </div>
+    <div class="card-body">
+        <table id="datatablesSimple">
+            <thead>
+                <tr>
+                    <th>Cliente</th>
+                    <th>Endereço</th>
+                    <th>Coordenadas</th>
+                    <th>Contato Principal</th>
+                    <th>Potência do Sistema</th>
+                    <th>Data de Cadastro</th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <th>Cliente</th>
+                    <th>Endereço</th>
+                    <th>Coordenadas</th>
+                    <th>Contato Principal</th>
+                    <th>Potência do Sistema</th>
+                    <th>Data de Cadastro</th>
+                </tr>
+            </tfoot>
+            <tbody>
+                {% if cards %}
+                {% for cliente in cards %}
+                <tr>
+                    <td><a href="{% url 'cliente' cliente.id %}">{{ cliente.name }}</a></td>
+                    <td><a href="{% url 'cliente' cliente.id %}">{{ cliente.format_endereco }}</a></td>
+                    <td>{{ cliente.format_coord }}</td>
+                    <td>{{ cliente.phone1|format_phone }}</td>
+                    {% if pger %}
+                    {% with pot=pger|get_item:cliente.id %}
+                    <td>{{ pot.calculogeracao|floatformat:2 }} kWp</td>
+                    {% endwith %}
+                    {% else %}
+                    <td> - kWp</td>
+                    {% endif %}
+                    <th>{{ cliente.register_date }}</th>
+                </tr>
+                {%endfor%}
+                {%endif%}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,16 @@
+{% load static %}
+
+<h5>Irradiação</h5>
+{% if irrad %}
+<div>
+    <strong>
+        <p class="shadow-sm row justify-content-md-center"> Irradiação Média:
+            {{irrad.media_irradiancia|floatformat:2 }} kWh/m².dia</p>
+    </strong>
+</div>
+{%else%}
+<strong>
+    <div class="shadow-sm row justify-content-md-center">Não há Irradiação cadastrada</div>
+</strong>
+{% endif %}
+

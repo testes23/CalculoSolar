@@ -1,0 +1,13 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+{% load phone_format %}
+{% block content %}
+
+
+<div class="container">
+    {% include 'clientes/partials/_infocliente.html' %}
+    {% include 'clientes/partials/_completo.html' %}
+    
+</div>
+
+{% endblock %}

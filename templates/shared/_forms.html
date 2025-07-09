@@ -1,0 +1,17 @@
+{% csrf_token %}
+<div class="container shadow-none justify-content-md-center">
+    {% for field in form.visible_fields %}
+    <div class="col-md-auto">
+        <div style="display:flex ;">
+            <label for="{{ field.id_for_label }}">{{field.label}}
+                {{ field }}
+        </div>
+        </label>
+        {% for error in field.errors %}
+        <div class="alert alert-danger" role="alert">
+            {{ error }}
+        </div>
+    </div>
+    {% endfor %}
+    {% endfor %}
+</div>

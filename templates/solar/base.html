@@ -1,0 +1,32 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+
+{% block title %}Módulo Solar - {{ block.super }}{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <nav class="nav nav-pills nav-fill" id="solarNav" role="tablist">
+                        <a class="nav-link {% if request.resolver_match.url_name == 'cadastro_cliente' %}active{% endif %}" 
+                           href="{% url 'cadastro_cliente' %}" role="tab">
+                            <i class="fas fa-user-plus me-2"></i>Cadastro de Clientes
+                        </a>
+                        <a class="nav-link {% if request.resolver_match.url_name == 'cadastro_irradiacao' %}active{% endif %}" 
+                           href="{% url 'cadastro_irradiacao' %}" role="tab">
+                            <i class="fas fa-sun me-2"></i>Irradiação Solar
+                        </a>
+                        <a class="nav-link {% if request.resolver_match.url_name == 'cadastro_consumo' %}active{% endif %}" 
+                           href="{% url 'cadastro_consumo' %}" role="tab">
+                            <i class="fas fa-bolt me-2"></i>Consumo
+                        </a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% block solar %}{% endblock %}
+</div>
+{% endblock %}

@@ -1,0 +1,60 @@
+{% extends 'clientes/_infocliente.html' %}
+
+{% block conta %}
+<div class="shadow-none p-3 mb-5  rounded">
+    <div class="accordion bg-light" id="accordionExemple">
+        <div class="accordion-item bg-light">
+            <h2 class="accordion-header bg-light" id="headingOne">
+                <button class="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                    aria-expanded="true" aria-controls="collapseOne">
+                    Contas:
+                </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <ul>
+                        <div class="row justify-content-md-left">
+                            <div class="col">
+                                <form method="post" action="{% url 'remover_conta' cliente.id %}" class="col">
+                                    {% csrf_token %}
+                                    {% for arquivo in conta %}
+                                    <div class="col">
+                                        <li>
+                                            <div class="input-group mb-3">
+                                                <div>
+                                                    <div style="margin-right: 10px;">
+                                                        <input type="checkbox"
+                                                            aria-label="Checkbox for following text input"
+                                                            name="contas_ids" value="{{ arquivo.id }}">
+                                                    </div>
+                                                </div>
+                                                <a href="{{arquivo.archives.url}}" target="_blank">
+                                                    {{ arquivo }}
+                                                </a>
+                                            </div>
+                                        </li>
+                                    </div>
+                                    {% empty %}
+                                    <li>Nenhum arquivo encontrado</li>
+                                    {% endfor %}
+                                    {% if conta %}
+                                    <div class="col-md-auto">
+                                        <button type="submit" class="btn btn-danger">Remover Selecionados</button>
+                                    </div>
+                                    {% endif %}
+                                </form>
+                            </div>
+                            <div class="col-md-auto">
+                                <button type="submit" class="btn btn-primary" data-bs-toggle="modal"
+                                    data-bs-target="#uploadDocModal">Adicionar</button>
+                                {% include 'clientes/partials/upload_doc.html' with cliente_id=nome.id%}
+                            </div>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{%endblock%}

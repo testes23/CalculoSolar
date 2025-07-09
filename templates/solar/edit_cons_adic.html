@@ -1,0 +1,95 @@
+{% extends 'solar/base.html' %}
+{% load static %}
+
+{% block title %}Editar Consumo Adicional - {{ block.super }}{% endblock %}
+
+{% block solar %}
+<div class="row">
+    <div class="col-12">
+        <div class="card shadow-sm">
+            <div class="card-header bg-primary text-white">
+                <h5 class="card-title mb-0">
+                    <i class="fas fa-plus-circle me-2"></i>Editar Consumo Adicional
+                </h5>
+            </div>
+            <div class="card-body">
+                <form action="{% url 'edit_cons_adic' cons_adic.id %}" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="row mb-4">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="{{ form.cliente.id_for_label }}" class="form-label">
+                                    {{ form.cliente.label }}
+                                </label>
+                                {{ form.cliente }}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <div class="form-group">
+                                <label for="{{ form.equipamento.id_for_label }}" class="form-label">
+                                    {{ form.equipamento.label }}
+                                </label>
+                                {{ form.equipamento }}
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="form-group">
+                                <label for="{{ form.pot.id_for_label }}" class="form-label">
+                                    {{ form.pot.label }}
+                                </label>
+                                <div class="input-group">
+                                    {{ form.pot }}
+                                    <span class="input-group-text">W</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="form-group">
+                                <label for="{{ form.horas.id_for_label }}" class="form-label">
+                                    {{ form.horas.label }}
+                                </label>
+                                {{ form.horas }}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <div class="form-group">
+                                <label for="{{ form.minutos.id_for_label }}" class="form-label">
+                                    {{ form.minutos.label }}
+                                </label>
+                                {{ form.minutos }}
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="form-group">
+                                <label for="{{ form.dias.id_for_label }}" class="form-label">
+                                    {{ form.dias.label }}
+                                </label>
+                                {{ form.dias }}
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3 d-flex align-items-end">
+                            <button type="submit" class="btn btn-primary w-100">
+                                <i class="fas fa-save me-2"></i>Salvar Alterações
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="row mt-4">
+                        <div class="col-12">
+                            <a href="{% url 'cadastro_consumo' %}" class="btn btn-secondary">
+                                <i class="fas fa-times me-2"></i>Cancelar
+                            </a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

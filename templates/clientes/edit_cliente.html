@@ -1,0 +1,80 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container">
+    <h3>Editar Cliente</h1>
+    <form action="{% url 'edit_cliente' cliente_id %}" method="POST" enctype="multipart/form-data" action="">
+        {% csrf_token %}
+        <div class="row mb-3">
+            <div class="col" style="margin-bottom: 10px;">
+                <label style="margin-bottom: 5px;">{{ form.name.label }}</label>
+                {{ form.name }}
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col" style="margin-bottom: 10px;">
+                <label style="margin-bottom: 5px;">{{ form.type_pf_pj.label }}</label>
+                {{ form.type_pf_pj }}
+            </div>
+            <div class="col" style="margin-bottom: 10px;">
+                <label style="margin-bottom: 5px;">{{ form.doc.label }}</label>
+                {{ form.doc }}
+            </div>
+            <div class="col" style="margin-bottom: 10px;">
+                <label style="margin-bottom: 5px;">{{ form.phone1.label }}</label>
+                {{ form.phone1 }}
+            </div>
+            <div class="col" style="margin-bottom: 10px;">
+                <label style="margin-bottom: 5px;">{{ form.phone2.label }}</label>
+                {{ form.phone2 }}
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col" style="margin-bottom: 10px;">
+                <label style="margin-bottom: 5px;">{{ form.email.label }}</label>
+                {{ form.email }}
+            </div>
+            <div class="col" style="margin-bottom: 10px;">
+                <label style="margin-bottom: 5px;">{{ form.coord_s.label }}</label>
+                {{ form.coord_s }}
+            </div>
+            <div class="col" style="margin-bottom: 10px;">
+                <label style="margin-bottom: 5px;">{{ form.coord_w.label }}</label>
+                {{ form.coord_w }}
+            </div>
+        </div>
+        <div>
+            <div class="col" style="margin-bottom: 10px;">
+                <label style="margin-bottom: 5px;">{{ form.street.label }}</label>
+                {{ form.street }}
+            </div>
+            <div class="col" style="margin-bottom: 10px;">
+                <label style="margin-bottom: 5px;">{{ form.street_number.label }}</label>
+                {{ form.street_number }}
+            </div>
+            <div class="col" style="margin-bottom: 10px;">
+                <label style="margin-bottom: 5px;">{{ form.postal_code.label }}</label>
+                {{ form.postal_code }}
+            </div>
+        </div>
+        <div>
+            <div class="col" style="margin-bottom: 10px;">
+                <label style="margin-bottom: 5px;">{{ form.bairro.label }}</label>
+                {{ form.bairro }}
+            </div>
+            <div class="col" style="margin-bottom: 10px;">
+                <label style="margin-bottom: 5px;">{{ form.city.label }}</label>
+                {{ form.city }}
+            </div>
+            <div class="col" style="margin-bottom: 10px;">
+                <label style="margin-bottom: 5px;">{{ form.state.label }}</label>
+                {{ form.state }}
+            </div>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-primary">Editar Cliente</button>
+        </div>
+    </form>
+</div>
+{% endblock %}
